@@ -48,6 +48,7 @@ const SYMPTOMS: SymptomDef[] = [
       /pet\s*(?:mein|me|main)?\s*(?:bahut\s*)?(?:zyada\s*)?(?:dard|marod|dukh)/i,
       /pelvic\s+pain|period\s+pain|period\s+cramps?|menstrual\s+cramps?|abdominal\s+pain|stomach\s+(?:pain|cramps?)|lower\s+(?:belly|abdomen)\s+pain|cramps?/i,
       /periods?\s*(?:ke\s*time|mein|me|ke\s*dauran)\s*(?:bahut\s*)?(?:zyada\s*)?dard/i,
+      /(?:stom[a-z]{2,3}h|tummy|belly|abdomen|abdominal|pelvic|pelvis|lower\s+(?:belly|abdomen|stomach))[\s-]*(?:ache|aches|pain|pains|cramps?|cramping|hurts?|hurting)|(?:pain|ache|aches|cramps?|cramping)\s+(?:in|around)\s+(?:my\s+)?(?:stom[a-z]{2,3}h|tummy|belly|abdomen|lower\s+(?:belly|abdomen|stomach)|pelvis|pelvic\s+area)/i,
       /पेट\s*(?:में\s*)?दर्द|कमर\s*दर्द|kamar\s*dard|माहवारी\s*में\s*दर्द/i,
     ],
   },

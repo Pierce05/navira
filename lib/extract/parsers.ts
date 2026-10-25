@@ -28,7 +28,7 @@ export function parseSeverityNumeric(s: string): Found<number> | null {
 /** Severity in words. The 0-10 value is a suggestion the person must confirm or change. */
 export function parseSeverityWords(s: string): Found<{ word: string; suggested: number }> | null {
   const rules: [RegExp, number][] = [
-    [/(unbearable|excruciating|bahut\s+(?:zyada|jyada|tez)|bohot\s+(?:zyada|jyada|tez)|bahut\s+bura|बहुत\s*(?:ज्यादा|ज़्यादा|तेज़|तेज)|severe|very bad)/i, 8],
+    [/(extreme(?:ly)?|terrible|awful|agoni[sz]ing|unbearable|excruciating|bahut\s+(?:zyada|jyada|tez)|bohot\s+(?:zyada|jyada|tez)|bahut\s+bura|बहुत\s*(?:ज्यादा|ज़्यादा|तेज़|तेज)|severe|very bad)/i, 8],
     [/(kaafi|kafi|काफी)\s+(?:zyada|jyada|tez)|quite (?:bad|painful)|moderate/i, 6],
     [/(\bmild\b|\bslight\b|halka|हल्का)/i, 3],
   ];
