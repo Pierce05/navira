@@ -1,0 +1,41 @@
+{
+  "pack": "pcos",
+  "version": "0.1.0-draft",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "note": "Draft. No rule uses weight, BMI or appearance as a trigger. Pending clinician review.",
+  "rules": [
+    {
+      "id": "PCOS-01", "pathway": "pcos",
+      "when": { "any": [{ "fact": "irregular_cycles", "exists": true }, { "fact": "cycle_length_days", "gt": 35 }, { "fact": "cycle_length_days", "lt": 21 }, { "fact": "cycles_per_year", "lt": 8 }] },
+      "outputs": {
+        "patientText": "Periods that are often late, early or missing are worth discussing with your doctor.",
+        "clinicianText": "Irregular or infrequent cycles reported (cycle length: {cycle_length_days:days})."
+      },
+      "source": { "name": "International Evidence-based Guideline for PCOS 2023", "url": "https://www.monash.edu/medicine/mchri/pcos", "section": "(verify)", "version": "2023" }
+    },
+    {
+      "id": "PCOS-02", "pathway": "pcos",
+      "when": { "any": [{ "fact": "acne", "exists": true }, { "fact": "hirsutism", "exists": true }, { "fact": "hair_thinning", "exists": true }] },
+      "outputs": {
+        "patientText": "Skin and hair changes like these are something clinicians ask about alongside your cycle.",
+        "clinicianText": "Features sometimes considered under androgen-related evaluation reported: {names:acne|hirsutism|hair_thinning}."
+      },
+      "source": { "name": "International Evidence-based Guideline for PCOS 2023", "url": "https://www.monash.edu/medicine/mchri/pcos", "section": "(verify)", "version": "2023" }
+    },
+    {
+      "id": "PCOS-03", "pathway": "pcos",
+      "when": {
+        "all": [
+          { "fact": "irregular_cycles", "exists": true }
+        ],
+        "any": [{ "fact": "acne", "exists": true }, { "fact": "hirsutism", "exists": true }, { "fact": "hair_thinning", "exists": true }]
+      },
+      "outputs": {
+        "patientText": "Cycle changes together with skin or hair changes are worth discussing with your doctor.",
+        "clinicianText": "Irregular cycles reported together with androgen-related features; ovulatory pattern and signs of androgen excess are commonly considered in evaluation. Diagnosis needs clinical assessment and exclusion of other causes."
+      },
+      "source": { "name": "International Evidence-based Guideline for PCOS 2023", "url": "https://www.monash.edu/medicine/mchri/pcos", "section": "(verify)", "version": "2023" }
+    }
+  ]
+}

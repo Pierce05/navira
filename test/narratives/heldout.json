@@ -1,0 +1,32 @@
+[
+  { "name": "H1 hinglish, messy, ranges", "lang": "hinglish",
+    "text": "yaar mujhe pichle 8-9 mahine se period ke pehle aur uske dauran bahut dard rehta hai, pet ke neeche wala hissa. kabhi kabhi 7 ya 8 out of 10. office se chhutti leni padti hai almost har mahine. ibuprofen leti hu par kuch khaas fayda nahi hota. mummy ko bhi aisa hi tha.",
+    "expect": [
+      { "key": "pelvic_pain" }, { "key": "missed_activity", "value": "work" }, { "key": "analgesics" },
+      { "key": "analgesic_response", "value": "none" }, { "key": "family_history" }
+    ], "mustNot": ["acne", "dyspareunia"] },
+  { "name": "H2 hindi (Devanagari)", "lang": "hi",
+    "text": "मुझे पिछले तीन सालों से माहवारी के दौरान बहुत तेज़ पेट दर्द होता है। दर्द की दवा से भी आराम नहीं मिलता। कभी-कभी थकान और कमज़ोरी भी रहती है। सेक्स के समय भी दर्द होता है।",
+    "expect": [
+      { "key": "pelvic_pain", "cycle": "during" }, { "key": "pelvic_pain_duration_months", "value": 36 }, { "key": "analgesics" },
+      { "key": "analgesic_response", "value": "none" }, { "key": "fatigue" }, { "key": "dyspareunia" }
+    ], "mustNot": ["acne", "hair_thinning"] },
+  { "name": "H3 english, spelled-out number", "lang": "en",
+    "text": "For about eighteen months I have had pelvic cramps that start two days before my period and last through it. It is around a 6 out of 10. Naproxen takes the edge off. I also get bad bloating.",
+    "expect": [
+      { "key": "pelvic_pain", "cycle": "before" }, { "key": "pelvic_pain_duration_months", "value": 18 }, { "key": "pelvic_pain_severity", "value": 6 },
+      { "key": "analgesics" }, { "key": "analgesic_response", "value": "partial" }
+    ], "mustNot": ["acne", "irregular_cycles"] },
+  { "name": "H4 mixed English + Hinglish", "lang": "hinglish",
+    "text": "Doctor ne bola ultrasound normal hai but I still have severe cramps every cycle. It has been 2 years. Weight badhne ke baad se hi irregular periods bhi hain, around 45 din ka gap. Pimples bahut hain face par.",
+    "expect": [
+      { "key": "told_normal" }, { "key": "prior_evaluation", "value": "ultrasound" }, { "key": "pelvic_pain" }, { "key": "pain_pattern", "value": "every cycle" },
+      { "key": "pelvic_pain_duration_months", "value": 24 }, { "key": "irregular_cycles" }, { "key": "cycle_length_days", "value": 45 }, { "key": "acne" }
+    ], "mustNot": ["dyspareunia", "conception_difficulty"] },
+  { "name": "H5 fragmented, messy", "lang": "hinglish",
+    "text": "periods mein dard... bahut. like really bad. cant go to class some days. sleep also gets ruined. took crocin, helped a bit. not sure how long exactly, maybe since school?",
+    "expect": [
+      { "key": "pelvic_pain", "cycle": "during" }, { "key": "missed_activity", "value": "classes" }, { "key": "sleep_disruption" },
+      { "key": "analgesics" }, { "key": "analgesic_response", "value": "partial" }, { "key": "pelvic_pain_onset" }
+    ], "mustNot": ["pelvic_pain_duration_months", "acne"] }
+]

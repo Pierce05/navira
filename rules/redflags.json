@@ -1,0 +1,117 @@
+{
+  "version": "0.1.0-draft",
+  "reviewStatus": "draft",
+  "note": "Rule-based, offline, no model. Phone numbers must be verified before launch (112 national emergency; Tele-MANAS 14416).",
+  "flags": [
+    {
+      "id": "RF-SEVERE-PAIN",
+      "category": "urgent",
+      "label": "Sudden severe pain, or pain with fainting",
+      "requireAll": [
+        [
+          "sudden(?:ly)?[^.]{0,40}(?:severe|worst|unbearable|terrible)[^.]{0,30}(?:pain|dard)",
+          "(?:achanak|achaanak|अचानक)\\s*(?:se\\s*)?(?:bahut\\s*)?(?:tez|zyada|jyada|bhayankar|तेज|बहुत)\\s*(?:pet\\s*|pelvic\\s*)?(?:dard|दर्द)",
+          "worst\\s+pain\\s+of\\s+my\\s+life",
+          "(?:faint(?:ed|ing)?|collaps\\w+|passed\\s+out|blacked\\s+out)(?:(?!\\bno\\b|\\bnot\\b|\\bnever\\b|\\bwithout\\b|n't|\\bnahi\\b)[^.]){0,40}(?:pain|cramp)",
+          "(?:pain|cramp)(?:(?!\\bno\\b|\\bnot\\b|\\bnever\\b|\\bwithout\\b|n't|\\bnahi\\b)[^.]){0,40}(?:faint(?:ed|ing)?|collaps\\w+|passed\\s+out|blacked\\s+out)",
+          "dard\\s+(?:ki\\s+wajah\\s+)?se\\s+(?:behosh|bepaan)",
+          "(?:behosh|बेहोश)[^.]{0,30}(?:dard|दर्द)",
+          "(?:dard|दर्द)[^.]{0,30}(?:behosh|बेहोश)",
+          "chakkar\\s+(?:aa|aaya|aaye)[^.]{0,40}(?:tez|bahut)\\s*dard"
+        ]
+      ]
+    },
+    {
+      "id": "RF-HEAVY-BLEED",
+      "category": "urgent",
+      "label": "Very heavy bleeding",
+      "requireAll": [
+        [
+          "soak(?:ed|ing|s)?\\s*(?:through\\s*)?(?:a\\s*|one\\s*|1\\s*)?(?:pad|tampon)s?\\s*(?:every|each|in\\s+an?|per)\\s*(?:1\\s*)?hour",
+          "(?:pad|tampon|napkin)s?\\s*(?:har|every)\\s*(?:ek\\s*)?(?:ghante|ghanta|hour)",
+          "(?:har|every)\\s*(?:ek\\s*)?(?:ghante|ghanta|hour)[^.]{0,20}(?:pad|napkin|tampon)",
+          "ghante\\s*(?:mein|me)\\s*(?:ek\\s*)?(?:pad|napkin)",
+          "(?:bleeding|khoon|blood)[^.]{0,50}(?:dizz\\w*|chakkar|lightheaded|faint\\w*)",
+          "(?:dizz\\w*|chakkar|lightheaded)[^.]{0,50}(?:heavy\\s+)?(?:bleeding|khoon)",
+          "(?:bahut\\s*)?(?:zyada\\s*)?(?:khoon|bleeding)[^.]{0,30}(?:ruk\\s*nahi|nahi\\s*ruk|won'?t\\s+stop|not\\s+stopping)"
+        ]
+      ]
+    },
+    {
+      "id": "RF-PREG-PAIN",
+      "category": "urgent",
+      "label": "Pain or bleeding when pregnant or possibly pregnant",
+      "requireAll": [
+        [
+          "\\b(?:i\\s*am|i'?m|im|main)\\s*(?:\\d+\\s*(?:weeks?|months?)\\s*)?pregnant",
+          "pregnant\\s*(?:hu|hun|hoon)",
+          "possibly\\s+pregnant|might\\s+be\\s+pregnant|think\\s+i\\s*(?:am|'?m)\\s+pregnant",
+          "pregnancy\\s+test\\s+(?:is\\s+|was\\s+)?positive",
+          "(?:missed|late)\\s+(?:my\\s+)?period\\s+and\\s+(?:now\\s+)?(?:pain|bleeding|cramp)",
+          "garbhavati|गर्भवती"
+        ],
+        [
+          "pain",
+          "dard",
+          "दर्द",
+          "bleed",
+          "khoon",
+          "cramp"
+        ]
+      ]
+    },
+    {
+      "id": "RF-FEVER-PAIN",
+      "category": "urgent",
+      "label": "Pain with high fever",
+      "requireAll": [
+        [
+          "high\\s+fever",
+          "tez\\s+bukhar",
+          "bahut\\s+(?:tez\\s+)?bukhar",
+          "fever\\s+(?:of\\s+)?10[1-5]",
+          "fever[^.]{0,15}(?:39|40)\\s*°?\\s*c",
+          "तेज़?\\s*बुखार"
+        ],
+        [
+          "pain",
+          "dard",
+          "दर्द",
+          "cramp"
+        ]
+      ]
+    },
+    {
+      "id": "RF-VOMIT",
+      "category": "urgent",
+      "label": "Vomiting that will not stop",
+      "requireAll": [
+        [
+          "(?:vomit\\w*|ulti)[^.]{0,30}(?:nahi\\s+ruk|won'?t\\s+stop|not\\s+stopping|non[- ]?stop|keeps?\\s+coming|continuous\\w*)",
+          "(?:nahi\\s+ruk\\w*|won'?t\\s+stop)[^.]{0,20}(?:vomit\\w*|ulti)",
+          "(?:can'?t|cannot|unable\\s+to)\\s+keep\\s+(?:anything|water|food)\\s+down"
+        ]
+      ]
+    },
+    {
+      "id": "RF-SELFHARM",
+      "category": "selfharm",
+      "label": "Thoughts of self-harm",
+      "requireAll": [
+        [
+          "(?:kill|hurt|harm)\\s+myself",
+          "suicid\\w*",
+          "want\\s+to\\s+die|wish\\s+i\\s+(?:was|were)\\s+dead",
+          "don'?t\\s+want\\s+to\\s+(?:live|be\\s+alive|exist)",
+          "end\\s+(?:my\\s+life|it\\s+all)",
+          "khud\\s+ko\\s+(?:khatam|nuksan|hurt|chot)",
+          "(?:jeena|jina)\\s+nahi\\s+chahti|jeene\\s+ka\\s+mann\\s+nahi",
+          "(?:marna|mar\\s+jaana|mar\\s+jana)\\s+chahti",
+          "zindagi\\s+khatam",
+          "aatmhatya|आत्महत्या",
+          "मरना\\s+चाहती|जीना\\s+नहीं\\s+चाहती"
+        ]
+      ]
+    }
+  ]
+}

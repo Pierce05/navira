@@ -1,0 +1,63 @@
+{
+  "pack": "endometriosis",
+  "version": "0.1.0-draft",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "note": "Draft rule text derived from published guidance. Pending clinician review. Links and section numbers must be verified before launch.",
+  "rules": [
+    {
+      "id": "ENDO-01", "pathway": "endometriosis",
+      "when": { "all": [{ "fact": "pelvic_pain", "exists": true }], "any": [{ "fact": "pelvic_pain_duration_months", "gte": 3 }, { "fact": "pain_pattern", "exists": true }] },
+      "outputs": {
+        "patientText": "Pelvic pain that keeps coming back or lasts for months is worth discussing with your doctor.",
+        "clinicianText": "Persistent or recurrent pelvic pain reported (duration: {pelvic_pain_duration_months:months})."
+      },
+      "source": { "name": "NICE NG73 Endometriosis", "url": "https://www.nice.org.uk/guidance/ng73", "section": "1.1 (verify)", "version": "2024 (verify)" }
+    },
+    {
+      "id": "ENDO-02", "pathway": "endometriosis",
+      "when": { "all": [{ "fact": "pelvic_pain", "cycleIn": ["before", "during", "after"] }, { "fact": "missed_activity", "exists": true }] },
+      "outputs": {
+        "patientText": "Period-related pain that affects your day-to-day life is worth discussing with your doctor.",
+        "clinicianText": "Period-related pain with functional impact reported (misses {missed_activity}; days per month: {missed_days_per_month})."
+      },
+      "source": { "name": "NICE NG73 Endometriosis / ESHRE 2022", "url": "https://www.nice.org.uk/guidance/ng73", "section": "1.1 (verify)", "version": "2024 (verify)" }
+    },
+    {
+      "id": "ENDO-03", "pathway": "endometriosis",
+      "when": { "all": [{ "fact": "dyspareunia", "exists": true }] },
+      "outputs": {
+        "patientText": "Pain during or after sex is something clinicians ask about. It is worth mentioning.",
+        "clinicianText": "Pain during or after sex reported (depth not specified)."
+      },
+      "source": { "name": "NICE NG73 Endometriosis", "url": "https://www.nice.org.uk/guidance/ng73", "section": "1.1 (verify)", "version": "2024 (verify)" }
+    },
+    {
+      "id": "ENDO-04", "pathway": "endometriosis",
+      "when": { "any": [{ "fact": "bowel_pain", "cycleIn": ["before", "during", "after"] }, { "fact": "urinary_pain", "cycleIn": ["before", "during", "after"] }] },
+      "outputs": {
+        "patientText": "Bowel or bladder pain that comes with your periods is worth mentioning to your doctor.",
+        "clinicianText": "Bowel or urinary pain around periods reported."
+      },
+      "source": { "name": "NICE NG73 Endometriosis", "url": "https://www.nice.org.uk/guidance/ng73", "section": "1.1 (verify)", "version": "2024 (verify)" }
+    },
+    {
+      "id": "ENDO-05", "pathway": "endometriosis",
+      "when": { "all": [{ "fact": "conception_difficulty", "exists": true }, { "fact": "subfertility_months", "gte": 12 }] },
+      "outputs": {
+        "patientText": "Trouble conceiving for a year or more is worth discussing with your doctor.",
+        "clinicianText": "Difficulty conceiving reported (about {subfertility_months:months})."
+      },
+      "source": { "name": "NICE NG73 Endometriosis", "url": "https://www.nice.org.uk/guidance/ng73", "section": "1.1 (verify)", "version": "2024 (verify)" }
+    },
+    {
+      "id": "ENDO-06", "pathway": "endometriosis",
+      "when": { "all": [{ "fact": "analgesic_response", "in": ["partial", "none"] }] },
+      "outputs": {
+        "patientText": "If pain relief from painkillers is limited, your doctor can discuss other options.",
+        "clinicianText": "Limited relief from first-line painkillers reported ({analgesic_response})."
+      },
+      "source": { "name": "ESHRE Endometriosis Guideline 2022", "url": "https://www.eshre.eu/Guidelines-and-Legal/Guidelines/Endometriosis-guideline", "section": "(verify)", "version": "2022" }
+    }
+  ]
+}

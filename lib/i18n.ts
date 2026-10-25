@@ -1,0 +1,37 @@
+/** UI chrome strings in English and Hindi. Deeper content (rules, brief) stays in English by design (PRD P1-5). */
+export type UiLang = 'en' | 'hi';
+const D = {
+  tagline: { en: 'Walk in with your story, not just your memory.', hi: 'अपनी कहानी के साथ जाइए, सिर्फ़ याददाश्त के साथ नहीं।' },
+  notDx: { en: 'Navira helps you prepare for a conversation with a clinician. It doesn\'t diagnose.', hi: 'Navira डॉक्टर से बातचीत की तैयारी में मदद करता है। यह बीमारी की पहचान (निदान) नहीं करता।' },
+  urgent: { en: 'Need urgent help?', hi: 'तुरंत मदद चाहिए?' },
+  skip: { en: 'Skip to content', hi: 'सीधे सामग्री पर जाएँ' },
+  navStory: { en: 'Story', hi: 'कहानी' }, navReview: { en: 'Review', hi: 'जाँचें' }, navTimeline: { en: 'Timeline', hi: 'टाइमलाइन' },
+  navBrief: { en: 'Brief', hi: 'सारांश' }, navPrivacy: { en: 'Privacy', hi: 'गोपनीयता' }, navLearn: { en: 'Learn', hi: 'जानें' },
+  theme: { en: 'Theme', hi: 'थीम' }, themeSystem: { en: 'System', hi: 'सिस्टम' }, themeLight: { en: 'Light', hi: 'हल्की' }, themeDark: { en: 'Dark', hi: 'गहरी' },
+  language: { en: 'Language', hi: 'भाषा' },
+  deleteAll: { en: 'Delete all data', hi: 'सारा डेटा मिटाएँ' },
+  network: { en: 'Network', hi: 'नेटवर्क' },
+  start: { en: 'Tell your story', hi: 'अपनी कहानी बताइए' },
+  useDemo: { en: 'Use demo story', hi: 'डेमो कहानी इस्तेमाल करें' },
+  synthetic: { en: 'SYNTHETIC', hi: 'काल्पनिक' },
+  consent: { en: 'I understand my story stays on this device and Navira does not diagnose.', hi: 'मैं समझती/समझता हूँ कि मेरी कहानी इसी डिवाइस पर रहती है और Navira निदान नहीं करता।' },
+  continue: { en: 'Continue', hi: 'आगे बढ़ें' }, back: { en: 'Back', hi: 'पीछे' },
+  micPrompt: { en: 'Tell us what\'s been happening. Any language, any order.', hi: 'बताइए क्या हो रहा है। किसी भी भाषा में, किसी भी क्रम में।' },
+  record: { en: 'Start recording', hi: 'रिकॉर्डिंग शुरू करें' }, stop: { en: 'Stop', hi: 'रोकें' },
+  typeInstead: { en: 'Or type your story here', hi: 'या यहाँ टाइप करें' },
+  looksRight: { en: 'Looks right', hi: 'ठीक है' },
+  confirmAll: { en: 'Confirm all', hi: 'सब की पुष्टि करें' }, confirmSelected: { en: 'Confirm selected', hi: 'चुने हुए की पुष्टि करें' },
+  isThisRight: { en: 'Is this what you meant?', hi: 'क्या आपका यही मतलब था?' },
+  notSure: { en: 'I\'m not sure', hi: 'मुझे पक्का नहीं पता' }, skipQ: { en: 'Skip', hi: 'छोड़ें' },
+  downloadPdf: { en: 'Download PDF', hi: 'PDF डाउनलोड करें' }, print: { en: 'Print', hi: 'प्रिंट करें' },
+  emptyStory: { en: 'No story yet. Start with whatever feels most important.', hi: 'अभी कोई कहानी नहीं। जो सबसे ज़रूरी लगे, वहाँ से शुरू करें।' },
+  deleteWarn: { en: 'This permanently erases everything on this device.', hi: 'यह इस डिवाइस का सारा डेटा हमेशा के लिए मिटा देगा।' },
+  worth: { en: 'Worth discussing with your doctor', hi: 'अपने डॉक्टर से चर्चा करने लायक' },
+  provPatient: { en: 'Reported by you', hi: 'आपने बताया' }, provSystem: { en: 'Navira\'s reading', hi: 'Navira की समझ' },
+  notYetKnown: { en: 'Not yet known', hi: 'अभी पता नहीं' },
+  call112: { en: 'Call 112', hi: '112 पर कॉल करें' },
+  continueLater: { en: 'Continue later', hi: 'बाद में जारी रखें' },
+  notUrgent: { en: 'This isn\'t urgent for me', hi: 'मेरे लिए यह ज़रूरी नहीं है' },
+} as const;
+export type TKey = keyof typeof D;
+export const tr = (lang: UiLang, k: TKey): string => D[k][lang];

@@ -1,0 +1,60 @@
+[
+  { "name": "N01 hinglish demo (SYNTHETIC)", "lang": "hinglish",
+    "text": "Mujhe do saal se periods ke time bahut zyada pet dard hota hai, kabhi kabhi college nahi ja paati, month mein do-teen din. Painkiller se thoda aaram milta hai but pura nahi. Sex ke time bhi dard hota hai, aur potty ke time bhi.",
+    "expect": [
+      { "key": "pelvic_pain", "cycle": "during" }, { "key": "pelvic_pain_duration_months", "value": 24 },
+      { "key": "missed_activity", "value": "classes" }, { "key": "missed_days_per_month", "value": "2–3" },
+      { "key": "analgesic_response", "value": "partial" }, { "key": "dyspareunia" }, { "key": "bowel_pain" }, { "key": "pelvic_pain_severity" }
+    ], "mustNot": ["acne", "irregular_cycles", "conception_difficulty"] },
+  { "name": "N02 english endometriosis-pattern", "lang": "en",
+    "text": "I've had severe period pain for 3 years, around 9/10. I miss work two to three days a month. Ibuprofen doesn't help. Pain during sex too. My sister has endometriosis. I had an ultrasound last year and was told it was normal.",
+    "expect": [
+      { "key": "pelvic_pain", "cycle": "during" }, { "key": "pelvic_pain_severity", "value": 9 }, { "key": "pelvic_pain_duration_months", "value": 36 },
+      { "key": "missed_activity", "value": "work" }, { "key": "missed_days_per_month", "value": "2–3" }, { "key": "analgesic_response", "value": "none" },
+      { "key": "dyspareunia" }, { "key": "family_history" }, { "key": "prior_evaluation", "value": "ultrasound" }, { "key": "told_normal" }
+    ], "mustNot": ["acne", "hair_thinning"] },
+  { "name": "N03 english PCOS-pattern", "lang": "en",
+    "text": "My periods are irregular, I get them every 45 days or sometimes skip. I have acne and my hair is thinning. I feel tired all the time. My mom has PCOS. I had a blood test last month.",
+    "expect": [
+      { "key": "irregular_cycles" }, { "key": "cycle_length_days", "value": 45 }, { "key": "acne" }, { "key": "hair_thinning" },
+      { "key": "fatigue" }, { "key": "family_history" }, { "key": "prior_evaluation", "value": "blood test" }
+    ], "mustNot": ["pelvic_pain", "dyspareunia"] },
+  { "name": "N04 hinglish PCOS-pattern", "lang": "hinglish",
+    "text": "Mere periods irregular hain, 40 din ka cycle hota hai. Chehre pe baal aur pimples bhi hain, baal jhadte hain. Thakan rehti hai. Mummy ko bhi PCOS hai.",
+    "expect": [
+      { "key": "irregular_cycles" }, { "key": "cycle_length_days", "value": 40 }, { "key": "hirsutism" }, { "key": "acne" },
+      { "key": "hair_thinning" }, { "key": "fatigue" }, { "key": "family_history" }
+    ], "mustNot": ["pelvic_pain"] },
+  { "name": "N05 hindi (Devanagari)", "lang": "hi",
+    "text": "मुझे दो साल से माहवारी में पेट दर्द होता है। कॉलेज नहीं जा पाती।",
+    "expect": [
+      { "key": "pelvic_pain", "cycle": "during" }, { "key": "pelvic_pain_duration_months", "value": 24 }, { "key": "missed_activity", "value": "classes" }
+    ], "mustNot": ["acne"] },
+  { "name": "N06 english mild, approximate date", "lang": "en",
+    "text": "I get cramps before my period, about 5/10, since 2023. It does not stop me from doing things. I take paracetamol and it works.",
+    "expect": [
+      { "key": "pelvic_pain", "cycle": "before" }, { "key": "pelvic_pain_severity", "value": 5 }, { "key": "pelvic_pain_onset" },
+      { "key": "analgesics" }, { "key": "analgesic_response", "value": "relief" }
+    ], "mustNot": ["missed_activity", "dyspareunia"] },
+  { "name": "N07 hinglish bowel + urinary + heavy", "lang": "hinglish",
+    "text": "Har mahine periods ke time pet dard hota hai, 7/10, 6 mahine se. Potty ke time dard hota hai aur peshab mein jalan bhi hoti hai. Zyada bleeding bhi hoti hai.",
+    "expect": [
+      { "key": "pelvic_pain", "cycle": "during" }, { "key": "pelvic_pain_severity", "value": 7 }, { "key": "pelvic_pain_duration_months", "value": 6 },
+      { "key": "pain_pattern", "value": "every cycle" }, { "key": "bowel_pain" }, { "key": "urinary_pain" }, { "key": "heavy_bleeding" }
+    ], "mustNot": ["acne", "dyspareunia"] },
+  { "name": "N08 english conception + MRI", "lang": "en",
+    "text": "I have pelvic pain around my periods for about 18 months. We have been trying to conceive for 2 years and it has not worked. I had an MRI.",
+    "expect": [
+      { "key": "pelvic_pain", "cycle": "during" }, { "key": "pelvic_pain_duration_months", "value": 18 }, { "key": "conception_difficulty" },
+      { "key": "subfertility_months", "value": 24 }, { "key": "prior_evaluation", "value": "mri" }
+    ], "mustNot": ["acne"] },
+  { "name": "N09 hinglish sleep + heavy + missed", "lang": "hinglish",
+    "text": "Raat ko pet dard se neend nahi aati. Periods mein zyada khoon aur clots aate hain. Month mein 4 din college nahi ja paati.",
+    "expect": [
+      { "key": "pelvic_pain" }, { "key": "sleep_disruption" }, { "key": "heavy_bleeding" }, { "key": "missed_activity", "value": "classes" }, { "key": "missed_days_per_month", "value": "4" }
+    ], "mustNot": ["acne", "irregular_cycles"] },
+  { "name": "N10 sparse hinglish", "lang": "hinglish",
+    "text": "Kabhi kabhi thakan rehti hai aur baal jhadte hain.",
+    "expect": [{ "key": "fatigue" }, { "key": "hair_thinning" }],
+    "mustNot": ["pelvic_pain", "dyspareunia", "acne", "missed_activity"] }
+]
